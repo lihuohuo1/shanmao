@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+body,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dd,dt{
+	margin: 0px;
+	padding: 0px;
+}
+img{
+	display: block;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	position: relative;
+	width: 100%;
+	font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+	color: #333;
+}
+i,a,em,b{
+	font-style: normal;
+}
+
+.register {
+	width: 1200px;
+	height: auto;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+
+.register_wrap {
+	width: 570px;
+	min-height: 485px;
+	float: right;
+}
+
+.register_wrap {
+	width: 570px;
+	min-height: 485px;
+	border: 1px solid #dad6d6;
+	float: right;
+	box-shadow: -2px 0 1px #e9e7e7, /2px 0 1px #e9e7e7, 0 -2px 1px #e9e7e7, 0 2px 1px #e9e7e7;
+	-webkit-box-shadow: -2px 0 1px #e9e7e7, 2px 0 1px #e9e7e7, 0 -2px 1px #e9e7e7, 0 2px 1px #e9e7e7;
+	-moz-box-shadow: -2px 0 1px #e9e7e7, 2px 0 1px #e9e7e7, 0 -2px 1px #e9e7e7, 0 2px 1px #e9e7e7;
+	margin: 28px 2px 2px 2px;
+	padding-bottom: 20px;
+}
+
+.mt li {
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #727171;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 38px;
+	border-bottom: 2px solid #fff;
+	cursor: pointer;
+}
+
+.mt li.curr {
+	border-bottom-color: #ec5151;
+	color: #000000;
+}
+
+.register_item {
+	width: 100%;
+	padding-top: 20px;
+	overflow: hidden;
+}
+
+.register_item_info {
+	width: 280px;
+	position: relative;
+	float: left;
+}
+
+.text {
+	width: 238px;
+	height: 18px;
+	padding: 10px 25px 10px 15px;
+	border: 1px solid #c9c9c9;
+	float: none;
+	font-size: 14px;
+	font-family: arial, "宋体";
+	overflow: hidden;
+	color: #333;
+	color: #9fa0a0\9;
+	float: left;
+}
+
+.error label {
+	padding-left: 10px;
+	color: #EC5051;
+	margin-left: 16px;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+}
+
+.success {
+	background: url(../img/login/login_icons_new.png)no-repeat;
+	background-position: -25px -2px;
+}
+
+.error {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 18px;
+	display: block;
+	float: left;
+	width: 200px;
+	position: relative;
+}
+
+.register_item i {
+	display: block;
+	width: 16px;
+	height: 18px;
+	position: absolute;
+	top: 10px;
+	right: 8px;
+}
+
+.error i {
+	display: block;
+	width: 16px;
+	height: 18px;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+	display: none;
+}
+
+
+/*背景图片要写在背景定位的前面*/
+
+.i_user {
+	background: url(../img/login/login_icons_new.png)no-repeat;
+	background-position: -25px -25px;
+}
+
+.i_email {
+	background: url(../img/login/login_icons_new.png)no-repeat;
+	background-position: -77px -3px;
+}
+
+.i_pass {
+	background: url(../img/login/login_icons_new.png)no-repeat;
+	background-position: -25px -48px;
+}
+
+.i_confirm {
+	background: url(../img/login/login_icons_new.png)no-repeat;
+	background-position: -25px -48px;
+}
+
+#regist_submit {
+	width: 278px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px;
+	background: #ec5151;
+	border: 0;
+	font-family: "microsoft yahei";
+	outline: 0;
+	cursor: pointer;
+}
+
+.error i {
+	background: url(../img/login/login_icons_new.png)no-repeat;
+	background-position: -25px -2px;
+}

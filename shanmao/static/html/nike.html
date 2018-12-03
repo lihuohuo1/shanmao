@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>耐克LeBron James</title>
+		<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+		<script type="text/javascript" src="js/nike.js"></script>
+		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/balance.js" ></script>
+		<script type="text/javascript" src="js/james.js" ></script>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/nike.css" />
+		<style>
+			.header_nav li a.active1 {
+				border-bottom: none;
+				color: #000;
+			}
+			
+			.w1200 {
+				width: 1200px!important;
+				margin: 0 auto;
+			}
+			
+			.u-flyer {
+				display: block;
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				position: fixed;
+				z-index: 9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="width: 40px;height: 100%;position: fixed;z-index: 10002;right: 0px;bottom: 0px;">
+			<div class="information">
+				<div class="quick_link">
+					<div class="quick_links">
+						<ul>
+							<li>
+								<a href="#">
+									<i class="user"></i>
+								</a>
+								<div class="user_info">
+									<i style="background: url(img/ibar_sprites.png)no-repeat;width: 5px;height: 9px;position: absolute;
+										right: -5px;top: 15px;background-position:0px -254px;"></i>
+									<p style="margin: 10px;width: 100px;height: 100px;float: left;"><img src="img/QQ图片20160917002104.jpg" alt="" style="width: 100px;height: 100px;border-radius:20% "></p>
+									<ul class="info">
+										<li>用户名：猪</li>
+										<li>级别：铜牌</li>
+									</ul>
+									<div class="login_btn">
+										<a href="#">我的订单</a>
+										<a href="#">我的收藏</a>
+									</div>
+								</div>
+							</li>
+							<li id="shopCart" style="border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;">
+								<a>
+									<i class="shopcart"></i>
+									<div style="width: 16px;height: 48px;display: block;color: white;" class="span">购物车</div>
+									<span style="display: block;width: 21px;height: 21px;background: #EC5051;border-radius: 50%;color: white;
+										text-align: center;line-height: 21px;margin: 10px 0px 0px 10px;" class="cart_span">0</span>
+								</a>
+							</li>
+							<li class="show">
+								<a href="#">
+									<i class="order"></i>
+								</a>
+								<div class="tips">
+									<font style="font-size: 12px;color: white;">我的订单</font>
+									<i class="right_black"></i>
+								</div>
+							</li>
+							<li class="show">
+								<a href="#">
+									<i class="money"></i>
+								</a>
+								<div class="tips">
+									<font style="font-size: 12px;color: white;">我的资产</font>
+									<i class="right_black"></i>
+								</div>
+							</li>
+							<li class="show">
+								<a href="#">
+									<i class="history"></i>
+								</a>
+								<div class="tips">
+									<font style="font-size: 12px;color: white;">我的足迹</font>
+									<i class="right_black"></i>
+								</div>
+							</li>
+							<li class="show">
+								<a href="#">
+									<i class="sc"></i>
+								</a>
+								<div class="tips">
+									<font style="font-size: 12px;color: white;">我的收藏</font>
+									<i class="right_black"></i>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div style="position: absolute;bottom: 0px;left: 0px;background: #000;width: 40px;" class="down">
+						<ul>
+							<li class="show" id="show">
+								<a href="#">
+									<i class="kfzx"></i>
+								</a>
+								<div class="tips" id="tips">
+									<font style="font-size: 12px;color: white;">客服中心</font>
+									<i class="right_black"></i>
+								</div>
+							</li>
+							<li style="margin: 0px;display: none;" class="return_tips">
+								<a href="#">
+									<i class="return"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cart_list" style="background: #fff;">
+					<a style="background: url(img/ibar_sprites.png);background-position: 0px -272px;display: block;width: 20px;height: 20px;
+						position: absolute;top: 9px;right: 12px;cursor: pointer;" class="close"></a>
+					<h3 style="">购物车</h3>
+					<div class="panel_contant">
+						<div style="position: absolute;top: 30%;" class="noGoods">
+							<div class="no">
+								<img src="img/toolbar-face.png" alt="小狐狸">
+							</div>
+							<div class="tips_text">
+								<p>购物车空空的，赶快去挑选心仪的商品吧~</p>
+								<a href="http://127.0.0.1:8020/shanmao/index.html" style="color: #EC5051;cursor: pointer;">去首页看看</a>
+							</div>
+						</div>
+						<div class="goods_list" style="display: none;">
+							<ul class="list">
+								<!--<li>
+									<img src="img/nike/444_P_1450995273861.jpg"/>
+									<a>耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码</a>
+									<span>¥4310.00</span>&nbsp;×
+									<i>1</i>
+									<p>删除</p>
+								</li>-->
+							</ul>
+						</div>
+					</div>
+					<div class="cart_bottom">
+						<div class="cart_bottom_title">
+							<span class="title_left">共<i id="num">0</i>件商品</span>
+							<span class="title_right">￥<i>0.00</i></span>
+						</div>
+						<div class="pay" style="cursor: pointer;">
+							<a href="http://127.0.0.1:8020/shanmao/balance.html">去购物车结算</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="title">
+			<span class="title_first">送货至：</span>
+			<span class="destination">深圳<img class="arrow" src="img/向下箭头.png" alt=""/></span>
+			<div class="login">
+				<a href="http://127.0.0.1:8020/shanmao/login.html">请登录</a>
+				<a href="http://127.0.0.1:8020/shanmao/regist.html">注册</a>
+			</div>
+			<div class="title_nav">
+				<ul>
+					<li>
+						<a href="http://www.shanmao.net.cn/user.php?act=order_list">我的订单</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/history_list.php">我的浏览</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/user.php?act=collection_list">我的收藏</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/user.php?act=message_list">客户服务</a>
+					</li>
+					<li class="li_last">
+						<a class="a_last" href="http://www.shanmao.net.cn/package.php">促销活动&or;</li>
+				</ul>
+			</div>
+			<div id="li_last_nav">
+				<ul>
+					<li>
+						<a href="http://www.shanmao.net.cn/auction.php">拍卖活动</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/activity.php">优惠礼包</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/wholesale.php">批发市场</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/package.php">超值礼包</a>
+					</li>
+				</ul>
+			</div>
+			<div class="car">
+				<a href="http://www.shanmao.net.cn/flow.php"><img src="img/car.png" alt="购物车" /></a>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="logo">
+				<a href="http://127.0.0.1:8020/shanmao/index.html">
+					<img src="img/闪猫商城-您的一站式购物平台_09.png" alt="闪猫商城" />
+				</a>
+			</div>
+			<div class="join">
+				<a href="http://www.shanmao.net.cn/merchants.php" target="_blank"><img src="img/ecsc-join.gif" / alt="连锁加盟"></a>
+			</div>
+			<div class="search" style="margin-top: 10px;">
+				<span style="text-align: center;line-height: 37px;width: 62px;height: 37px;font-size: 18px;display: block;" class="search_span">商品</span>
+				<input type="text" placeholder="内衣" class="search_input" />
+				<div class="search_hot">
+					<ul>
+						<li class="search_hot_first">
+							<a href="#">周大福</a>
+						</li>
+						<li>
+							<a href="#">内衣</a>
+						</li>
+						<li>
+							<a href="#">Five plus</a>
+						</li>
+						<li>
+							<a href="#">手机</a>
+						</li>
+					</ul>
+				</div>
+				<div style="width: 59px;height: 36px;background: #ec5151;float: right;margin-top: -47px;cursor: pointer;">
+					<a href="#"><img src="img/闪猫商城-您的一站式购物平台_12.png" style="padding-left: 10px;padding-top: 2px;" /></a>
+				</div>
+			</div>
+			<div style="width: 216px;height: 55px;float: right;background: url(img/闪猫商城-您的一站式购物平台_06.png);">
+				<a href="#" style="display: block;width: 216px;height: 44px;"></a>
+			</div>
+			<div style="padding-top: 80px;"><span style="display: block;width: 210px;height:23px;background: black;color: white;font-size: 16px;
+											 padding:10px 0px 10px 20px;">全部商品分类</span>
+			</div>
+			<div class="header_nav">
+				<ul>
+					<li>
+						<a href="http://127.0.0.1:8020/shanmao/index.html" class="active1" style="color: #EC5051;">首页</a>
+					</li>
+					<li>
+						<a href="#">食品特产</a>
+					</li>
+					<li>
+						<a href="#">服装城</a>
+					</li>
+					<li>
+						<a href="#">大家电</a>
+					</li>
+					<li>
+						<a href="#">品牌专区</a>
+					</li>
+					<li>
+						<a href="#">团购</a>
+					</li>
+					<li>
+						<a href="#">夺宝奇兵</a>
+					</li>
+					<li>
+						<a href="#">积分商城</a>
+					</li>
+					<li>
+						<a href="#">预售频道</a>
+					</li>
+					<li>
+						<a href="#">店铺街</a>
+					</li>
+				</ul>
+				<div class="wrap_line"></div>
+			</div>
+		</div>
+
+		<div style="background: #000;width: 100%;height: 1px;"></div>
+
+		<div class="ecsc_head w1200" style="padding: 20px 0px;line-height: 24px;">
+			<h1>休闲、运动、户外健身</h1>
+			<span style="font-family: '宋体';color: #A7A7A7;margin:0px 6px;line-height: 24px;">></span>
+			<span>耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码</span>
+		</div>
+
+		<div class="p_box">
+			<div class="w1200">
+				<div class="product_info">
+					<div class="product_img">
+						<div class="picture">
+							<span style="display: none;" class="goodId">1</span>
+							<a style="position: relative;display: inline-block;outline: 0px;">
+								<img src="img/nike/444_P_1450995273861.jpg" alt="耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码" width="405px" height="405px" class="goodImg" id="1" />
+								<div class="magic_small"></div>
+								<div class="magic_box" style="z-index: 10;"id="big_img">
+									
+								</div>
+							</a>
+						</div>
+						<div class="spec_list">
+							<a class="spec_prev"></a>
+							<a class="spec_next"></a>
+							<div class="spec_items">
+								<ul>
+									<li>
+										<a href="#" style="display: inline-block;border: 1px solid #EC5051;">
+											<img src="img/nike/444_P_1450995273861.jpg" alt="耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码" width="60px" height="60px" />
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="m_item_inner">
+						<div class="itemInfo">
+							<div class="name" style="padding-bottom: 20px;font-family: '微软雅黑';">
+								<h1 style="font-size: 16px;color: #666;font-weight: bold;">耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码</h1>
+							</div>
+							<div class="summary">
+								<div class="price">
+									<div style="border-bottom: 1px dashed #ccc;height: 36px;">
+										<dl style="">
+											<dt>本店价</dt>
+											<dd style="width: 120px;">市场价</dd>
+											<dd>评价</dd>
+											<dd>销量</dd>
+										</dl>
+									</div>
+									<div>
+										<dl style="height: 40px;">
+											<dt><b class="goodPrice">￥<i>4310.00</i></b><a style="color: #005aa0;">（降价通知）</a></dt>
+											<dd style="text-decoration: line-through;width: 120px;">￥5172.00</dd>
+											<dd>0</dd>
+											<dd>6</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div class="address" style="padding-top: 8px;">
+								<div class="dt">配&nbsp;&nbsp;&nbsp;送:</div>
+								<div style="float: left;padding-left: 10px;">
+									<select>
+										<option>广东深圳福田区</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="choose_btns">
+								<a class="buy">立即购买</a>
+								<a class="append">
+									<i></i> 加入购物车
+								</a>
+							</div>
+						</div>
+					</div>
+					<div style="float: right; border: 1px solid #efefef;">
+						<img src="img/nike/QQ截图20160921113153.png" alt="" style="display: inline;" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="service">
+				<div class="service_flow">
+					<div class="service_item">
+						<i class="ecsc_zp"></i>
+						<span>正品保障</span>
+					</div>
+					<div class="service_item">
+						<i class="ecsc_bt"></i>
+						<span>七天包退</span>
+					</div>
+					<div class="service_item">
+						<i class="ecsc_hp"></i>
+						<span>好评如潮</span>
+					</div>
+					<div class="service_item">
+						<i class="ecsc_fh"></i>
+						<span>闪电发货</span>
+					</div>
+					<div class="service_item" id="service_item_last">
+						<i class="ecsc_ry"></i>
+						<span>权威荣誉</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer_desc">
+				<div class="footer_list">
+					<dl>
+						<dt>新手上路</dt>
+						<dd>
+							<a href="#">&gt;&nbsp;售后流程</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;购物流程</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;订购方式</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;隐私声明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>配送与支付</dt>
+						<dd>
+							<a href="#">&gt;&nbsp;货到付款区域</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;配送支付智能查询</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;支付方式说明</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;上门自提</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>会员中心</dt>
+						<dd>
+							<a href="#">&gt;&nbsp;资金管理</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;我的收藏</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;我的订单</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>服务保证</dt>
+						<dd>
+							<a href="#">&gt;&nbsp;退换货原则</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;售后服务保证</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;产品质量保证</a>
+						</dd>
+					</dl>
+					<dl class="contact_us">
+						<dt>联系我们</dt>
+						<dd>
+							<a href="#">&gt;&nbsp;网站故障报告</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;选机资讯</a>
+						</dd>
+						<dd>
+							<a href="#">&gt;&nbsp;投诉与建议</a>
+						</dd>
+					</dl>
+					<div class="code">
+						<ul class="code_tabs">
+							<li class="ecjia">ECjia</li>
+							<li>ECtouch</li>
+						</ul>
+						<div class="tabs_contant">
+							<div class="code_01">
+								<img src="img/二维码.png" alt="开发者二维码" />
+							</div>
+							<div class="code_02" style="display: none;">
+								<img src="img/二维码2.png" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="copyright">
+					<p class="footer_ecscinfo" style="line-height: 25px;">
+						<a href="#">首页 </a>|
+						<a href="#">隐私保护</a>|
+						<a href="#">联系我们</a>|
+						<a href="#">免责条款</a>|
+						<a href="#">公司简介</a>|
+						<a href="#">商家入驻</a>|
+						<a href="#" style="border: 0px;">意见反馈</a>
+					</p>
+					<p>
+						<a href="#">模板堂</a>|
+						<a href="#">ECjia</a>|
+						<a href="#">ECtouch</a>|
+						<a href="#">电竞学院</a>|
+						<a href="#">ecshop模板堂</a>|
+						<a href="#">ECjia</a>|
+						<a href="#">ECtouch</a>|
+						<a href="#">大商创</a>
+					</p>
+					<p style="line-height: 18px;">
+						<a href="#">Powered by<span style="color: #ec5051;padding-left: 5px">大商创1.0</span></a>
+					</p>
+					<p style="padding-top: 10px;">
+						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_03.gif" alt=""></a>
+						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_05.gif" alt=""></a>
+						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_07.gif" alt=""></a>
+						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_09.gif" alt=""></a>
+						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_11.gif" alt=""></a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
