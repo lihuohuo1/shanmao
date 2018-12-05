@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户中心_注册新用户名</title>
+		<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
+		<link rel="stylesheet" href="css/login.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/regist.css" />
+		<style>
+			.footer {
+				border-top: 1px solid #ccc;
+				padding-top: 0px;
+			}
+			
+			.footer p {
+				padding-top: 10px;
+			}
+			
+			.footer a {
+				font-size: 12px;
+			}
+			
+			.footer a:hover {
+				color: #EC5051;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="login_title">
+			<a href="http://127.0.0.1:8020/shanmao/index.html">
+				<img src="img/login/logo_2015.png" alt="logo" />
+			</a>
+			<b></b>
+			<p style="color: #696969;float: right;padding-top: 20px;">有账号
+				<a href="http://127.0.0.1:8020/shanmao/login.html" style="float: right;color: #3894ea;">在此登录</a>
+			</p>
+		</div>
+		<div style="background: black;width: 100%;height: 1px;"></div>
+		<div class="register" style="margin: auto;">
+			<div style="float: left;padding: 64px 105px 64px 65px;">
+				<a href="#"><img src="img/regist/regist-banner.jpg" alt="" /></a>
+			</div>
+			<div class="register_wrap">
+				<div class="register_form" style="padding: 25px 0px 0px 35px; ">
+					<div class="mt" style="height: 42px;overflow: hidden;">
+						<ul>
+							<li class="curr">邮箱注册</li>
+							<li>手机注册</li>
+						</ul>
+					</div>
+					<div class="mc">
+						<div class="form_two">
+							<form>
+								<div class="register_item">
+									<div class="register_item_info">
+										<input type="text" id="username" name="username" placeholder="用户名" class="text" />
+										<i class="i_user" style=""></i>
+									</div>
+									<div class="error" id="username_notice">
+										<i></i>
+										<label></label>
+									</div>
+								</div>
+								<div class="register_item">
+									<div class="register_item_info">
+										<input type="text" id="email" name="email" placeholder="邮箱地址" class="text" />
+										<i class="i_email"></i>
+									</div>
+									<div class="error" id="email_notice">
+										<i></i>
+										<label></label>
+									</div>
+								</div>
+								<div class="register_item">
+									<div class="register_item_info">
+										<input type="password" id="password" name="password" placeholder="设置密码" class="text" maxlength="20" />
+										<i class="i_pass"></i>
+									</div>
+									<div class="error" id="password_notice">
+										<i class="i"></i>
+										<label></label>
+									</div>
+								</div>
+								<div class="register_item">
+									<div class="register_item_info">
+										<input type="password" id="confirm" name="confirm" placeholder="确认密码" class="text" maxlength="20" />
+										<i class="i_confirm"></i>
+									</div>
+									<div class="error" id="confirm_notice">
+										<i class="i"></i>
+										<label></label>
+									</div>
+								</div>
+								<div class="register_item">
+									<div class="register_item_info">
+										<input type="checkbox" id="check" name="check" checked="checked" style="float: left;margin-top: 14px;" />
+										<label style="height: 40px;line-height: 40px;float: left;padding-left: 0;cursor: pointer;">阅读并同意《<a href="#" style="margin-top: 14px;color: #3a78bf;">服务协议</a>》</label>
+									</div>
+								</div>
+								<div class="register_item">
+									<div class="register_item_info">
+										<input type="button" id="regist_submit" name="submit" value="同意协议并注册" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer" style="background: #fff;">
+			<div class="copyright">
+				<p class="footer_ecscinfo" style="line-height: 25px;">
+					<a href="#">首页 </a>|
+					<a href="#">隐私保护</a>|
+					<a href="#">联系我们</a>|
+					<a href="#">免责条款</a>|
+					<a href="#">公司简介</a>|
+					<a href="#">商家入驻</a>|
+					<a href="#" style="border: 0px;">意见反馈</a>
+				</p>
+				<p>
+					<a href="#">模板堂</a>|
+					<a href="#">ECjia</a>|
+					<a href="#">ECtouch</a>|
+					<a href="#">电竞学院</a>|
+					<a href="#">ecshop模板堂</a>|
+					<a href="#">ECjia</a>|
+					<a href="#">ECtouch</a>|
+					<a href="#">大商创</a>
+				</p>
+				<p style="line-height: 18px;">
+					<a href="#">Powered by<span style="color: #ec5051;padding-left: 5px">大商创1.0</span></a>
+				</p>
+				<p style="padding-top: 10px;">
+					<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_03.gif" alt=""></a>
+					<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_05.gif" alt=""></a>
+					<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_07.gif" alt=""></a>
+					<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_09.gif" alt=""></a>
+					<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_11.gif" alt=""></a>
+				</p>
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

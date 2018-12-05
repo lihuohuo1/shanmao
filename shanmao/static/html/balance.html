@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/balance.css" />
+		<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+		<script type="text/javascript" src="js/balance.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+	</head>
+
+	<body>
+		<div class="title">
+			<span class="title_first">送货至：</span>
+			<span class="destination">深圳<img class="arrow" src="img/向下箭头.png" alt=""/></span>
+			<div class="login">
+				<a href="http://127.0.0.1:8020/shanmao/login.html">请登录</a>
+				<a href="http://127.0.0.1:8020/shanmao/regist.html">注册</a>
+			</div>
+			<div class="title_nav" style="right: 50px;">
+				<ul>
+					<li>
+						<a href="http://www.shanmao.net.cn/user.php?act=order_list">我的订单</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/history_list.php">我的浏览</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/user.php?act=collection_list">我的收藏</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/user.php?act=message_list">客户服务</a>
+					</li>
+					<li class="li_last">
+						<a class="a_last" href="http://www.shanmao.net.cn/package.php">促销活动&or;</li>
+				</ul>
+			</div>
+			<div id="li_last_nav">
+				<ul>
+					<li>
+						<a href="http://www.shanmao.net.cn/auction.php">拍卖活动</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/activity.php">优惠礼包</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/wholesale.php">批发市场</a>
+					</li>
+					<li>
+						<a href="http://www.shanmao.net.cn/package.php">超值礼包</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="bal_header w1200">
+			<div class="bal_logo">
+				<a href="http://127.0.0.1:8020/shanmao/index.html"><img src="img/闪猫商城-您的一站式购物平台_09.png" alt="闪猫商城" /></a>
+			</div>
+			<div class="bal_search">
+				<form class="searchForm" name="serchForm" method="get">
+					<div class="search_tabs">
+						<i></i>
+						<ul class="shop_serach">
+							<li><span style="margin-left: 15px;	font-size: 14px;">商品</span></li>
+							<li style="background: #EC5151;color: #fff;position: absolute;left: -1px;top: 36px;">
+								<span style="margin-left: 15px;	font-size: 14px;color: white;">店铺</span>
+							</li>
+						</ul>
+					</div>
+					<input type="text" placeholder="周大福" name="keyword" class="keyword" style="color: #999;" />
+					<button class="search_button">
+						<i></i>
+					</button>
+				</form>
+			</div>
+		</div>
+	
+		<div class="container">
+			<div class="ecsc_shop w1200">
+				<div class="ecsc_shop_title">
+					<i></i>
+					<h3 style="margin-left: 15px;float: left;font-size: 18px;color: #727171;font-weight: normal;">购物车（&nbsp;<em class="check_num">0</em>&nbsp;）
+					</h3>					
+				</div>
+			</div>
+			<div class="cart_warp w1200" style="padding-bottom: 40px;">
+				<div class="ecsc_cart">
+					<div class="cart_head">
+						<div class="cart_checkbox column">
+							<input type="checkbox" class="check_all" style="vertical-align: middle;"/>
+							<label style="color: #000000;cursor: pointer;">全选</label>
+						</div>
+						<div class="column" style="width: 315px;">商品</div>
+						<div class="column" style="width: 210px;">属性</div>
+						<div class="column" style="width: 150px;">单价（元）</div>
+						<div class="column" style="width: 140px;">数量</div>
+						<div class="column" style="width: 120px;">小计（元）</div>
+						<div class="column" style="width: 74px;">操作</div>
+					</div>
+					<div class="bal_cart_list">
+						<div class="shop">
+							<input type="checkbox" class="shop_check" style="vertical-align: middle;"/>
+							<a style="cursor: pointer;">耐克旗舰店</a>
+						</div>
+						<div class="item_list">
+							<ul class="item_list_ul">
+							</ul>
+						</div>
+						<div class="nogoods" style="display: none;text-align: center;font-size: 20px;font-weight: bold;color: #EC5051;">
+							您还没有选择商品
+						</div>
+					</div>
+					<div class="cart_price">
+						<div style="float: left;">
+							<input type="checkbox" style="vertical-align: middle;margin-left: 30px;" class="select_all" />
+							<label>全选</label>
+						</div>							
+						<p class="bal_del">删除选择的商品</p>
+						<p class="bal_move">移到我的收藏</p>
+						<div class="cart_price_right">
+							<div class="btn_area" style="float: right;">
+								<input type="button" value="去结算" />
+							</div>
+							<div class="price_num">
+								<span>总价（不含运费）：</span>
+								<span class="cart_goods_amount">
+									<em>￥</em>
+									0.00
+								</span>
+							</div>
+							<div class="amount_sum">
+								已选择
+								<em class="cart_check_sum">0</em>
+								件商品
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
