@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+		<script src="js/jquery-1.12.3.js"></script>
+		<script>
+			$(function(){
+				
+				//获取数据
+				$.getJSON("json/index_lunbo.json", function(data){
+					
+					//遍历, 添加li
+					for (var i=0; i<data.length; i++) {
+						var obj = data[i];
+						
+						var li = $("<li><img src=" + obj.img + " /></li>");
+						li.addClass("active");
+						$("#list").append(li);
+					}
+					
+				})
+				
+				
+				//传参到下一个页面
+				location.href = "1.html?id="+"1";
+				//获取参数
+				var para = location.search; //?id=1
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul id="list">
+				
+			</ul>
+		</div>
+		
+	</body>
+</html>

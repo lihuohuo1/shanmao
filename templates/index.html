@@ -1,0 +1,2719 @@
+{% load  static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="闪猫商城"/>
+    <meta name="keywords" content="闪猫商城"/>
+    <title>闪猫商城-您的一站式购物平台</title>
+    <script type="text/javascript" src={% static "js/jquery-1.12.0.js" %}></script>
+    <script type="text/javascript" src={% static "js/index.js" %}></script>
+    <script type="text/javascript" src={% static "js/nike.js" %}></script>
+    <script type="text/javascript" src={% static "js/jquery.cookie.js" %}></script>
+    <link rel="stylesheet" href="{% static "css/main.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/index.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/nike.css" %}"/>
+    <script>
+        $(function () {
+            var boxTop = $(".marker").offset().top;
+            $(window).scroll(function () {
+                css / index.css
+                var _top = $(document).scrollTop();
+                if (_top >= boxTop) {
+                    $(".move").slideDown("fast");
+                    $(".return_tips").show();
+                } else {
+                    $(".move").slideUp("fast");
+                    $(".return_tips").hide();
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div style="width: 40px;height: 100%;position: fixed;z-index: 10002;right: 0px;bottom: 0px;">
+    <div class="information">
+        <div class="quick_link">
+            <div class="quick_links">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="user"></i>
+                        </a>
+                        <div class="user_info">
+                            <i style="background: url({% static 'img/ibar_sprites.png' %})no-repeat;width: 5px;height: 9px;position: absolute;
+										right: -5px;top: 15px;background-position:0px -254px;"></i>
+                            <p style="margin: 10px;width: 100px;height: 100px;float: left;"><img
+                                    src="{% static "img/QQ图片20160917002104.jpg" %}" alt=""
+                                    style="width: 100px;height: 100px;border-radius:20% "></p>
+                            <ul class="info">
+                                <li>用户名：猪</li>
+                                <li>级别：铜牌</li>
+                            </ul>
+                            <ul class="member" style="display: none;">
+                                <li id="uname"></li>
+                                <li>级别：铜牌</li>
+                            </ul>
+                            <div class="login_btn">
+                                <a href="#">我的订单</a>
+                                <a href="#">我的收藏</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="shopCart" style="border-bottom: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;">
+                        <a>
+                            <i class="shopcart"></i>
+                            <div style="width: 16px;height: 48px;display: block;color: white;" class="span">购物车</div>
+                            <span style="display: block;width: 21px;height: 21px;background: #EC5051;border-radius: 50%;color: white;
+										text-align: center;line-height: 21px;margin: 10px 0px 0px 10px;"
+                                  class="cart_span">0</span>
+                        </a>
+                    </li>
+                    <li class="show">
+                        <a href="#">
+                            <i class="order"></i>
+                        </a>
+                        <div class="tips">
+                            <font style="font-size: 12px;color: white;">我的订单</font>
+                            <i class="right_black"></i>
+                        </div>
+                    </li>
+                    <li class="show">
+                        <a href="#">
+                            <i class="money"></i>
+                        </a>
+                        <div class="tips">
+                            <font style="font-size: 12px;color: white;">我的资产</font>
+                            <i class="right_black"></i>
+                        </div>
+                    </li>
+                    <li class="show">
+                        <a href="#">
+                            <i class="history"></i>
+                        </a>
+                        <div class="tips">
+                            <font style="font-size: 12px;color: white;">我的足迹</font>
+                            <i class="right_black"></i>
+                        </div>
+                    </li>
+                    <li class="show">
+                        <a href="#">
+                            <i class="sc"></i>
+                        </a>
+                        <div class="tips">
+                            <font style="font-size: 12px;color: white;">我的收藏</font>
+                            <i class="right_black"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="position: absolute;bottom: 0px;left: 0px;background: #000;width: 40px;" class="down">
+                <ul>
+                    <li class="show" id="show">
+                        <a href="#">
+                            <i class="kfzx"></i>
+                        </a>
+                        <div class="tips" id="tips">
+                            <font style="font-size: 12px;color: white;">客服中心</font>
+                            <i class="right_black"></i>
+                        </div>
+                    </li>
+                    <li style="margin: 0px;display: none;" class="return_tips">
+                        <a href="#">
+                            <i class="return"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cart_list" style="background: #fff;">
+            <a style="background: url({% static 'img/ibar_sprites.png' %});background-position: 0px -272px;display: block;width: 20px;height: 20px;
+						position: absolute;top: 9px;right: 12px;cursor: pointer;" class="close"></a>
+            <h3 style="">购物车</h3>
+            <div class="panel_contant">
+                <div style="position: absolute;top: 30%;" class="noGoods">
+                    <div class="no">
+                        <img src="{% static 'img/toolbar-face.png' %}" alt="小狐狸">
+                    </div>
+                    <div class="tips_text">
+                        <p>购物车空空的，赶快去挑选心仪的商品吧~</p>
+                        <a style="color: #EC5051;cursor: pointer;">去首页看看</a>
+                    </div>
+                </div>
+                <div class="goods_list" style="display: none;">
+                    <ul class="list">
+                        <!--<li>
+                            <img src="img/nike/444_P_1450995273861.jpg"/>
+                            <a>耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码</a>
+                            <span>¥4310.00</span>&nbsp;×
+                            <i>1</i>
+                            <p>删除</p>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="cart_bottom">
+                <div class="cart_bottom_title">
+                    <span class="title_left">共<i>0</i>件商品</span>
+                    <span class="title_right">￥<i>0.00</i></span>
+                </div>
+                <div class="pay">
+                    <a href="#">去购物车结算</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="move"
+     style="width: 100%;height: 65px;opacity: 0.9;position: fixed;left: 0px;top: 0px;background: #fff;display: none;z-index: 888;">
+    <div style="width: 1200px;height: 65px;margin: 0px auto;">
+        <div class="move_logo">
+            <a href="http://www.shanmao.net.cn/index.php">
+                <img src="{% static 'img/闪猫商城-您的一站式购物平台_09.png' %}" alt="闪猫商城"/>
+            </a>
+        </div>
+        <div class="move_input" style="margin-top: 10px;">
+            <span style="text-align: center;line-height: 37px;width: 62px;height: 37px;font-size: 18px;display: block;"
+                  class="search_span">商品</span>
+            <input type="text" placeholder="内衣" class="move_search"/>
+            <div class="move_input_img">
+                <a href="#"><img src="{% static 'img/闪猫商城-您的一站式购物平台_12.png' %}" style="padding-left: 10px;padding-top: 2px;"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="title">
+    <span class="title_first">送货至：</span>
+    <span class="destination">深圳<img class="arrow" src="{% static 'img/向下箭头.png' %}" alt=""/></span>
+    <div class="login">
+        <a href="http://127.0.0.1:8020/shanmao/login.html">请登录</a>
+        <a href="http://127.0.0.1:8020/shanmao/regist.html">注册</a>
+    </div>
+    <div class="isLogin">
+        <a class="uname" style="position: absolute;left: 149px;top: 5px;"></a>
+        <a href="http://127.0.0.1:8020/shanmao/index.html"
+           style="position: absolute;left: 314px;top: 5px;text-decoration: underline;color: #EC5051;cursor: pointer;">退出</a>
+    </div>
+    <div class="title_nav">
+        <ul>
+            <li>
+                <a href="http://www.shanmao.net.cn/user.php?act=order_list">我的订单</a>
+            </li>
+            <li>
+                <a href="http://www.shanmao.net.cn/history_list.php">我的浏览</a>
+            </li>
+            <li>
+                <a href="http://www.shanmao.net.cn/user.php?act=collection_list">我的收藏</a>
+            </li>
+            <li>
+                <a href="http://www.shanmao.net.cn/user.php?act=message_list">客户服务</a>
+            </li>
+            <li class="li_last">
+                <a class="a_last" href="http://www.shanmao.net.cn/package.php">促销活动&or;</li>
+        </ul>
+    </div>
+    <div id="li_last_nav">
+        <ul>
+            <li>
+                <a href="http://www.shanmao.net.cn/auction.php">拍卖活动</a>
+            </li>
+            <li>
+                <a href="http://www.shanmao.net.cn/activity.php">优惠礼包</a>
+            </li>
+            <li>
+                <a href="http://www.shanmao.net.cn/wholesale.php">批发市场</a>
+            </li>
+            <li>
+                <a href="http://www.shanmao.net.cn/package.php">超值礼包</a>
+            </li>
+        </ul>
+    </div>
+    <div class="car">
+        <a href="http://www.shanmao.net.cn/flow.php"><img src="{% static 'img/car.png' %}" alt="购物车"/></a>
+    </div>
+</div>
+
+<div class="header">
+    <div class="logo">
+        <a href="http://www.shanmao.net.cn/index.php">
+            <img src="{% static 'img/闪猫商城-您的一站式购物平台_09.png' %}" alt="闪猫商城"/>
+        </a>
+    </div>
+    <div class="join">
+        <a href="http://www.shanmao.net.cn/merchants.php" target="_blank"><img src="{% static 'img/ecsc-join.gif' %}" / alt="连锁加盟"></a>
+    </div>
+    <div class="search" style="margin-top: 10px;">
+        <span style="text-align: center;line-height: 37px;width: 62px;height: 37px;font-size: 18px;display: block;"
+              class="search_span">商品</span>
+        <input type="text" placeholder="内衣" class="search_input"/>
+        <div class="search_hot">
+            <ul>
+                <li class="search_hot_first">
+                    <a href="#">周大福</a>
+                </li>
+                <li>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">Five plus</a>
+                </li>
+                <li>
+                    <a href="#">手机</a>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 59px;height: 36px;background: #ec5151;float: right;margin-top: -47px;cursor: pointer;">
+            <a href="#"><img src="{% static 'img/闪猫商城-您的一站式购物平台_12.png' %}" style="padding-left: 10px;padding-top: 2px;"/></a>
+        </div>
+    </div>
+    <div style="width: 216px;height: 55px;float: right;background: url({% static 'img/闪猫商城-您的一站式购物平台_06.png' %});">
+        <a href="#" style="display: block;width: 216px;height: 44px;"></a>
+    </div>
+    <div style="padding-top: 80px;"><span style="display: block;width: 210px;height:23px;background: black;color: white;font-size: 16px;
+											 padding:10px 0px 10px 20px;">全部商品分类</span>
+    </div>
+    <div class="header_nav">
+        <ul>
+            <li>
+                <a href="#" class="active1">首页</a>
+            </li>
+            <li>
+                <a href="#">食品特产</a>
+            </li>
+            <li>
+                <a href="#">服装城</a>
+            </li>
+            <li>
+                <a href="#">大家电</a>
+            </li>
+            <li>
+                <a href="#">品牌专区</a>
+            </li>
+            <li>
+                <a href="#">团购</a>
+            </li>
+            <li>
+                <a href="#">夺宝奇兵</a>
+            </li>
+            <li>
+                <a href="#">积分商城</a>
+            </li>
+            <li>
+                <a href="#">预售频道</a>
+            </li>
+            <li>
+                <a href="#">店铺街</a>
+            </li>
+        </ul>
+        <div class="wrap_line"></div>
+    </div>
+</div>
+
+<div style="width: 100%;">
+    <div class="banner">
+        <div class="sidebar">
+            <div class="sidebar_name">
+                <h3><a href="#">家用电器<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">手机、数码、通信<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">电脑、办公<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">家具、家居、家装、厨具<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">男装、女装、内衣<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">鞋、箱包、钟表、奢侈品<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">个人化妆、清洁用品<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">母婴、玩具乐器<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">图书、音像、电子书<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">休闲、运动、户外健身<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">腕表、珠宝配饰、眼镜<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">汽车、汽车用品<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">食品、酒类、生鲜、特产<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">营养、大保健<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">保健滋补、医药、成人<b>></b></a></h3></div>
+            <div class="sidebar_name">
+                <h3><a href="#">礼品、卡、旅游、充值<b>></b></a></h3></div>
+        </div>
+        <div class="marker">
+            <ul class="bigImg">
+                <li style="z-index: 1;">
+                    <a href="#"><img  width="730px" height="380px" src="{% static 'img/a1.png' %}"></a>
+                </li>
+                <li>
+                    <a href="#"><img  width="730px" height="380px" src="{% static 'img/a2.png' %}"></a>
+                </li>
+                <li>
+                    <a href="#"><img  width="730px" height="380px" src="{% static 'img/a3.jpg' %}"></a>
+                </li>
+                <li>
+                    <a href="#"><img  width="730px" height="380px" src="{% static 'img/a4.jpg' %}"></a>
+                </li>
+            </ul>
+            <ul class="bigImg_bar" style="z-index: 2;">
+                <li class="bigImg_bar_active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="hot_sell_01">
+                <img src="{% static 'img/热卖.png' %}" alt="限时抢购1"/>
+            </div>
+        </div>
+        <div class="smallImg">
+            <ul style="height: 136px;">
+                <li>
+                    <a href="http://www.ecmoban.com/" target="_blank"><img src="{% static 'img/1.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="http://www.ecmoban.com/" target="_blank"><img src="{% static 'img/2.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="http://www.ecmoban.com/" target="_blank"><img src="{% static 'img/3.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/4.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/5.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/6.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/7.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/8.jpg' %}"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/9.jpg' %}"/></a>
+                </li>
+            </ul>
+            <div class="left"><span> < </span></div>
+            <div class="right"><span> > </span></div>
+        </div>
+        <div class="ad">
+            <h2 class="tab">商城公告</h2>
+            <h2>招商入住</h2>
+            <div class="tabs">
+                <div class="tabs_p1">
+                    <ul>
+                        <li>
+                            <a href="#">官方使用提示信息</a><span>[2014-03-19]</span></li>
+                        <li>
+                            <a href="#">整合说明</a><span>[2014-03-19]</span></li>
+                        <li>
+                            <a href="#">管理功能说明 </a><span>[2014-03-19]</span></li>
+                        <li>
+                            <a href="#">联系方式 </a><span>[2014-03-19]</span></li>
+                        <li>
+                            <a href="#">火爆销售中 </a><span>[2014-03-19]</span></li>
+                    </ul>
+                </div>
+                <div class="tabs_p2" style="display: none;">
+                    <a href="#"><img src="{% static 'img/商店入驻.jpg' %}" alt="申请商店入驻"/></a>
+                    <a href="#">
+                        <p>查看开店协议</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar_contant">
+            <div class="clannels">
+                <a href="#">品牌日<i>></i></a>
+                <a href="#">家电城<i>></i></a>
+                <a href="#">智能生活馆<i>></i></a>
+                <a href="#">京东净化馆<i>></i></a>
+                <a href="#">京东帮服务店<i>></i></a>
+                <a href="#">值得买精选<i>></i></a>
+            </div>
+            <div class="fore">
+                <dl>
+                    <dt><a href="#">智能设备<i>></i></a></dt>
+                    <dd>
+                        <a href="#">智能手环</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能手表</a>
+                    </dd>
+                    <dd>
+                        <a href="#">运动跟踪器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">健康监测</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能配饰</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能家居</a>
+                    </dd>
+                    <dd>
+                        <a href="#">体感车</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能眼镜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">其他配件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机清洁</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机贴膜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">机身附件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">镜头附件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">电池/充电器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">移动电源</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">数码配件<i>></i></a></dt>
+                    <dd>
+                        <a href="#">存储卡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">读卡器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">滤镜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">闪光灯/手柄</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机包</a>
+                    </dd>
+                    <dd>
+                        <a href="#">三脚架/云台</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="cata">
+                <div class="cata_top">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad6.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad5.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cata_bottom">
+                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt=""></a>
+                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar_contant">
+            <div class="clannels">
+                <a href="#">品牌日<i>></i></a>
+                <a href="#">家电城<i>></i></a>
+                <a href="#">智能生活馆<i>></i></a>
+                <a href="#">京东净化馆<i>></i></a>
+                <a href="#">京东帮服务店<i>></i></a>
+                <a href="#">值得买精选<i>></i></a>
+            </div>
+            <div class="fore">
+                <dl>
+                    <dt><a href="#">智能设备<i>></i></a></dt>
+                    <dd>
+                        <a href="#">智能手环</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能手表</a>
+                    </dd>
+                    <dd>
+                        <a href="#">运动跟踪器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">健康监测</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能配饰</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能家居</a>
+                    </dd>
+                    <dd>
+                        <a href="#">体感车</a>
+                    </dd>
+                    <dd>
+                        <a href="#">智能眼镜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">其他配件</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">数码配件<i>></i></a></dt>
+                    <dd>
+                        <a href="#">存储卡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">读卡器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">滤镜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">闪光灯/手柄</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机包</a>
+                    </dd>
+                    <dd>
+                        <a href="#">三脚架/云台</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机清洁</a>
+                    </dd>
+                    <dd>
+                        <a href="#">相机贴膜</a>
+                    </dd>
+                    <dd>
+                        <a href="#">机身附件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">镜头附件</a>
+                    </dd>
+                    <dd>
+                        <a href="#">电池/充电器</a>
+                    </dd>
+                    <dd>
+                        <a href="#">移动电源</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="cata">
+                <div class="cata_top">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad2.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad3.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad5.jpg' %}" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/ad6.jpg' %}" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cata_bottom">
+                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt=""></a>
+                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contant">
+    <div class="hot">
+        <div class="hot_title">
+            <ul>
+                <li class="on">热门推荐<i style="z-index: 3;"></i></li>
+                <li>疯狂抢购<i></i></li>
+                <li>商城推荐<i></i></li>
+                <li>热评商品<i></i></li>
+            </ul>
+        </div>
+        <div class="tempWrap" style="overflow: hidden;position: relative;width: 921px;height: 255px;">
+            <div class="done-item" style="display: block;">
+                <ul style="width: 1850px;left: 0px;position: relative;overflow: hidden;" class="done_item_ul">
+                    <li style="border-left: 1px solid #dcdcdc;">
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_10.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="http://127.0.0.1:8020/shanmao/nike.html">耐克NikeLebron Xi Premium詹姆斯11代鸳</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											4310.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											5172.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/lbj2.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											75.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											117.60
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="i{% static 'img/lbj3.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											246.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_02.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											248.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_04.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											233.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											450.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_05.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											666.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											888.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_06.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											123.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											321.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_07.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											123.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											321.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_08.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											111.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											222.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_09.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											231.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											333.00
+										</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="done-item">
+                <ul>
+                    <li style="border-left: 1px solid #dcdcdc;">
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_09.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">耐克NikeLebron Xi Premium詹姆斯11代鸳</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											4310.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											5172.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_08.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											75.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											117.60
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_07.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											246.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_06.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											248.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_05.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											233.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											450.00
+										</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="done-item">
+                <ul>
+                    <li style="border-left: 1px solid #dcdcdc;">
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_04.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">耐克NikeLebron Xi Premium詹姆斯11代鸳</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											4310.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											5172.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_03.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											75.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											117.60
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_02.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											246.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_01.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											248.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_10.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											233.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											450.00
+										</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="done-item">
+                <ul>
+                    <li style="border-left: 1px solid #dcdcdc;">
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_09.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">耐克NikeLebron Xi Premium詹姆斯11代鸳</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											4310.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											5172.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_08.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											75.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											117.60
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{%  static 'img/hot_07.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											246.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_02.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											248.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											358.00
+										</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tempWrap_img">
+                            <img src="{% static 'img/hot_01.jpg' %}" alt=""/>
+                        </div>
+                        <div class="done_name">
+                            <a href="#">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
+                        </div>
+                        <div class="done_price">
+									<span class="shop_price">
+											<em>￥</em>
+											233.00
+										</span>
+                            <span class="original-price">
+											<em>￥</em>
+											450.00
+										</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="done_left"><span> < </span></div>
+            <div class="done_right"><span> > </span></div>
+        </div>
+        <div class="shop_group">
+            <div class="temp" style="overflow: hidden;position: relative;width: 240px;">
+                <ul style="position: relative;left: 0px;width: 960px;overflow: hidden;">
+                    <li>
+                        <a href="#"><img src="{% static 'img/热卖1.jpg' %}"></a>
+                        <div class="group_ctr">
+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'img/热卖2.jpg' %}"></a>
+                        <div class="group_ctr">
+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'img/热卖3.jpg' %}"></a>
+                        <div class="group_ctr">
+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'img/热卖4.jpg' %}"></a>
+                        <div class="group_ctr">
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="group_right"><span>></span></div>
+                <div class="group_left"><span><</span></div>
+                <i class="picon"
+                   style="background: url(http://www.shanmao.net.cn/themes/ecmoban_dsc/images/picon.png)no-repeat;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="r">
+        <div class="r_title">
+            <i><img src="{% static 'img/R.png' %}" alt="R"></i>
+            <a href="http://www.shanmao.net.cn/brand.php" target="_blank"
+               style="display: block;float: left;font-size: 18px;color: #333;padding-top: 3px;padding-left: 5px;">品牌街</a>
+        </div>
+        <div class="brand_warp" style="height: auto;overflow: hidden;">
+            <div class="brand_logos">
+                <ul>
+                    <li>
+                        <a><img src="{% static 'img/品牌街1.jpg' %}" / alt="品牌街1"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街2.jpg' %}"/ alt="品牌街2"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街3.jpg' %}"/ alt="品牌街3"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街4.jpg' %}" / alt="品牌街4"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街5.jpg' %}" / alt="品牌街5"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街6.jpg' %}" / alt="品牌街6"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街7.jpg' %}" / alt="品牌街7"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街8.jpg' %}" / alt="品牌街8"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街9.jpg' %}"/ alt="品牌街9"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街10.jpg' %}" / alt="品牌街10"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街11.jpg' %}" / alt="品牌街11"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街12.jpg' %}" / alt="品牌街12"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街13.jpg' %}" / alt="品牌街13"></a>
+                    </li>
+                    <li>
+                        <a><img src="{% static 'img/品牌街14.jpg' %}" / alt="品牌街14"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="brand_adv">
+            <div class="bd">
+                <ul style="width: 1375px;height: 121px;overflow: hidden;position: relative;" class="bd_list"></ul>
+            </div>
+            <div class="hd">
+                <ul>
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="gift1">
+        <a href="#"><img src="{% static 'img/给妈妈的礼物.png' %}" / alt="给妈妈的爱"></a>
+    </div>
+
+    <div class="floot" id="floot_1">
+        <div class="floot_container">
+            <div class="floot_title">
+                <h2>
+                    <i class="floots">1F</i>
+                    <span>鞋靴、箱包、钟表、奢侈品</span>
+                </h2>
+                <ul class="floot_tab">
+                    <li class="on">奢侈品<em style="width: 44px;display: block;"></em></li>
+                    <li>功能箱包<em style="width: 58px"></em></li>
+                </ul>
+            </div>
+
+            <div class="floot_contant">
+                <div class="floot_left">
+                    <div class="floot_left_banner">
+                        <div class="tempW">
+                            <ul id="tempW_ul"></ul>
+                            <div class="tempW_bar" id="tempW_bar" style="position: absolute;right: 0px;bottom: 0px;">
+                                <ul style="overflow: hidden;">
+                                    <li class="enter"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="banner_nav" id="nav_1">
+                            <ul>
+                                <li>
+                                    <a href="#">奢侈品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">鞋靴</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">箱包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钱包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">服饰</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">腰带</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">太阳镜</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">饰品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">配件</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">功能箱包<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">拉杆箱</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">旅行包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">电脑包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">休闲运动包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">相机包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">腰包/胸包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">登山包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">旅行包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">书包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">妈咪包</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">流行男鞋<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">休闲鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">凉鞋/沙滩</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">帆布鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">商务休闲鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">正装鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">增高鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">拖鞋/人字</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">工装鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">男靴</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">传统布鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">功能鞋</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">精品男包<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">商务公文包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">单肩/斜跨</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">男生手包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">双肩包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钱包/卡包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钥匙包</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">时尚女鞋<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">凉鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">单鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">高跟鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">坡跟鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">松糕鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">鱼嘴鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">休闲鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">帆布鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">拖鞋/人字</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">妈妈鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">防水台</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">礼品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">火机烟具</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">军刀军据</a>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">美妆礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">工艺礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">礼盒礼券</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">礼品文具</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">收藏品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">古董文物</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">地方礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">创意礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">婚庆用品</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">潮流女包<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">单肩/斜跨</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">女生手包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">双肩包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钱包/卡包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钥匙包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">手提包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">手拿包/晚</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">零钱包</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">钟表<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">男表</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">女表</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">儿童表</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钟座挂钟</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <dl>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                            </dl>
+
+                        </div>
+                    </div>
+                    <div class="floot_right_banner">
+                        <div style="position: relative;left: 0px;top: 0px;width: 236px;height: 490px;background: #e7e7e7;"
+                             class="banner_logos">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad2.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad3.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad5.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad6.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad9.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="next"></a>
+                        <a class="prev"></a>
+                    </div>
+                    <div class="floot_news"></div>
+                </div>
+                <div style="width: 740px;height: 490px;overflow: hidden;">
+                    <div class="floot_right">
+                        <ul class="ecsc_main"></ul>
+                    </div>
+                    <div class="floot_right">
+                        <img src="{% static 'img/陆逊.jpg' %}" alt="" / style="width: 700px;height: 400px;padding-top: 30px;padding-left:
+                        15px;">
+                    </div>
+                </div>
+                <div class="floot_bottom">
+                    <ul>
+                        <li style="border-left: 1px solid #efefef;">
+                            <a href="#"><img src="{% static 'img/floot_bottom1.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom2.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom3.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom4.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom5.jpg' %}" alt=""/></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gift1">
+        <a href="#"><img src="{%  static 'img/给妈妈的礼物.png' %}" / alt="给妈妈的爱"></a>
+    </div>
+
+    <div class="floot" id="floot_2">
+        <div class="floot_container">
+            <div class="floot_title">
+                <h2>
+                    <i class="floots">2F</i>
+                    <span>鞋靴、箱包、钟表、奢侈品</span>
+                </h2>
+                <ul class="floot_tab">
+                    <li class="on">奢侈品<em style="width: 44px;display: block;"></em></li>
+                    <li>功能箱包<em style="width: 58px"></em></li>
+                </ul>
+            </div>
+
+            <div class="floot_contant">
+                <div class="floot_left">
+                    <div class="floot_left_banner">
+                        <div class="tempW">
+                            <ul id="tempW_ul_2"></ul>
+                            <div class="tempW_bar" id="tempW_bar_2" style="position: absolute;right: 0px;bottom: 0px;">
+                                <ul style="overflow: hidden;">
+                                    <li class="enter"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="banner_nav" id="nav_2">
+                            <ul>
+                                <li>
+                                    <a href="#">奢侈品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">鞋靴</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">箱包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钱包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">服饰</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">腰带</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">太阳镜</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">饰品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">配件</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">功能箱包<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">拉杆箱</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">旅行包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">电脑包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">休闲运动包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">相机包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">腰包/胸包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">登山包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">旅行包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">书包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">妈咪包</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">流行男鞋<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">休闲鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">凉鞋/沙滩</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">帆布鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">商务休闲鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">正装鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">增高鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">拖鞋/人字</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">工装鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">男靴</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">传统布鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">功能鞋</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">精品男包<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">商务公文包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">单肩/斜跨</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">男生手包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">双肩包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钱包/卡包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钥匙包</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">时尚女鞋<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">凉鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">单鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">高跟鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">坡跟鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">松糕鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">鱼嘴鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">休闲鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">帆布鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">拖鞋/人字</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">妈妈鞋</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">防水台</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">礼品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">火机烟具</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">军刀军据</a>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">美妆礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">工艺礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">礼盒礼券</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">礼品文具</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">收藏品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">古董文物</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">地方礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">创意礼品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">婚庆用品</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">潮流女包<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">单肩/斜跨</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">女生手包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">双肩包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钱包/卡包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钥匙包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">手提包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">手拿包/晚</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">零钱包</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">钟表<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">男表</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">女表</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">儿童表</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">钟座挂钟</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <dl>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                            </dl>
+
+                        </div>
+                    </div>
+                    <div class="floot_right_banner">
+                        <div style="position: relative;left: 0px;top: 0px;width: 236px;height: 490px;background: #e7e7e7;"
+                             class="banner_logos">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad2.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad3.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad5.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad6.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="next"></a>
+                        <a class="prev"></a>
+                    </div>
+                    <div class="floot_news"></div>
+                </div>
+                <div style="width: 740px;height: 490px;overflow: hidden;">
+                    <div class="floot_right">
+                        <ul class="ecsc_main"></ul>
+                    </div>
+                    <div class="floot_right">
+                        <img src="{% static 'img/贾诩.jpg' %}" alt="" / style="width: 700px;height: 400px;padding-top: 30px;padding-left:
+                        15px;">
+                    </div>
+                </div>
+                <div class="floot_bottom">
+                    <ul>
+                        <li style="border-left: 1px solid #efefef;">
+                            <a href="#"><img src="{% static 'img/floot_bottom1.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom2.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom3.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom4.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/floot_bottom5.jpg' %}" alt=""/></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gift1">
+        <a href="#"><img src="{% static 'img/给妈妈的礼物.png' %}" / alt="给妈妈的爱"></a>
+    </div>
+
+    <div class="floot" id="floot_3">
+        <div class="floot_container">
+            <div class="floot_title">
+                <h2>
+                    <i class="floots">3F</i>
+                    <span>食品、酒类、生鲜、特产</span>
+                </h2>
+                <ul class="floot_tab" style="width: 156px;margin-right: 22px;">
+                    <li class="on">地方特产<em style="width: 60px;display: block;"></em></li>
+                    <li>进口食品<em style="width: 60px"></em></li>
+                </ul>
+            </div>
+
+            <div class="floot_contant">
+                <div class="floot_left">
+                    <div class="floot_left_banner">
+                        <div class="tempW">
+                            <ul id="tempW_ul_3"></ul>
+                            <div class="tempW_bar" id="tempW_bar_3" style="position: absolute;right: 0px;bottom: 0px;">
+                                <ul style="overflow: hidden;">
+                                    <li class="enter"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="banner_nav" id="nav_3">
+                            <ul>
+                                <li>
+                                    <a href="#">地方特产<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">新疆</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">四川</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">云南</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">湖南</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">内蒙</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">北京</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">山西</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">福建</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">东北</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">其他</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">进口食品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">冲调饮品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">牛奶</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">饼干蛋糕</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">糖果/巧克力</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">休闲零食</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">粮油调味</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">生鲜食品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">猪肉</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">羊肉</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">大闸蟹</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">海蜇头</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">小黄鱼</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">中外名酒<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">洋酒</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">白酒</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">葡萄酒</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">啤酒</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">黄酒/养生</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">收藏酒</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">茗茶<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">乌龙</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">铁观音</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">普洱</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">龙井</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">绿茶</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">红茶</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">花草茶</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">休闲食品<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">休闲零食</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">坚果炒货</a>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">肉干肉脯</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">蜜饯果干</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">糖果/巧克力</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">饼干蛋糕</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">无糖食品</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">食品礼券<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">瓜子</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">小面包</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">碧根果</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">卡券</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">饮料冲调<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">牛奶乳品</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">饮料</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">饮用水</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">咖啡/奶茶</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">成人奶粉</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">粮油调味<i> > </i></a>
+                                    <div class="items">
+                                        <div class="item">
+                                            <a href="#">大米</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">老抽</a>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">酱油</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">白糖</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">鸡精</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">食用盐</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#">食用油</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <dl>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                                <dd></dd>
+                            </dl>
+
+                        </div>
+                    </div>
+                    <div class="floot_right_banner">
+                        <div style="position: relative;left: 0px;top: 0px;width: 236px;height: 490px;background: #e7e7e7;"
+                             class="banner_logos">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad2.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad3.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad5.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad6.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad8.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad7.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad.jpg' %}" alt></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{% static 'img/ad4.jpg' %}" alt></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="next"></a>
+                        <a class="prev"></a>
+                    </div>
+                    <div class="floot_news"></div>
+                </div>
+                <div style="width: 740px;height: 490px;overflow: hidden;">
+                    <div class="floot_right">
+                        <ul id="demo"></ul>
+                    </div>
+                    <div class="floot_right">
+                        <img src="{% static 'img/郭嘉.jpg' %}" alt="" / style="width: 700px;height: 400px;padding-top: 30px;padding-left:
+                        15px;">
+                    </div>
+                </div>
+                <div class="floot_bottom">
+                    <ul>
+                        <li style="border-left: 1px solid #efefef;">
+                            <a href="#"><img src="{% static 'img/food11.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/food12.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/food13.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/food10.jpg' %}" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{% static 'img/food9.jpg' %}" alt=""/></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        作者：870225580@qq.com
+        时间：2016-09-18
+        描述：猜你喜欢
+    -->
+    <div class="guess" style="width: 1200px;margin: 0px auto;overflow: hidden;height: auto;padding-top: 20px;">
+        <div class="guess_title">
+            <i></i>
+            <a href="#" target="_blank" style="display: inline-block;">猜你喜欢</a>
+        </div>
+        <div class="guess_love">
+            <dl class="love_list">
+                <dt class="love_title">
+                    <i></i>
+                    爱搜标签
+                </dt>
+                <dd>
+                    <ul class="tag_name_list">
+                        <li>
+                            <a href="#">周大福</a>
+                        </li>
+                        <li>
+                            <a href="#">内衣</a>
+                        </li>
+                        <li>
+                            <a href="#">Five Plus</a>
+                        </li>
+                        <li>
+                            <a href="#">手机</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="love_product_list">
+                <dt class="love_title">
+                    <i></i>
+                    喜欢的商品
+                </dt>
+                <dd>
+                    <div class="love_product_items">
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>2015春...</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 5.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢1.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>思莱德SE..</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 305.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢2.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>乐视超级电.</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 2088.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢3.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>飞舞20...</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 169.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢4.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>耐克Nik..</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 4310.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢5.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>星图（SI...</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 2499.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢6.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>Five ..</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 676.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢7.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>徐柔20.</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 39.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢8.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="product_item">
+                            <div class="box">
+                                <div class="bg"></div>
+                                <a href="#">
+                                    <h1>华为荣耀 ...</h1>
+                                    <div class="new_price">
+                                        <em>￥</em> 998.00
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p_img">
+                                <img src="{% static 'img/猜你喜欢9.jpg' %}" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl style="float: left;width: 380px;height: 369px;border-right: 1px solid #dcdcdc;;border-bottom: 1px solid #dcdcdc;">
+                <dt class="love_title">
+                    <i></i>
+                    推荐给你的店铺
+                </dt>
+                <dd class="love_shop">
+                    <div class="love_shop_list" style="padding: 32px 0 0 22px;overflow: hidden">
+                        <div style="margin-bottom: 26px;height: 118px;">
+                            <div class="shop_left">
+                                <a href="#"><img src="{% static 'img/喜欢的店铺.png' %}" alt=""></a>
+                            </div>
+                            <div class="shop_right">
+                                <div class="shop_logo">
+                                    <img src="{% static 'img/汤臣倍健.jpg' %}" alt="">
+                                </div>
+                                <p>汤臣倍健保健...</p>
+                                <div class="btn">
+                                    <a href="#">进入></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 118px;">
+                            <div class="shop_left">
+                                <a href="#"><img src="{% static 'img/喜欢的店铺2.png' %}" alt=""></a>
+                            </div>
+                            <div class="shop_right">
+                                <div class="shop_logo">
+                                    <img src="{% static 'img/汤成倍健2.jpg' %}" alt="">
+                                </div>
+                                <p>博集天卷专营...</p>
+                                <div class="btn">
+                                    <a href="#">进入></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl style="float: left;width: 284px;height: 369px;border-right: 1px solid #dcdcdc;;border-bottom: 1px solid #dcdcdc;">
+                <dt class="love_title">
+                    <i></i>
+                    可能感兴趣
+                </dt>
+                <dd class="maybe">
+                    <div>
+                        <a href="#"><img src="{% static 'img/感兴趣1.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'img/感兴趣2.jpg' %}" alt=""></a>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="elevator" style="position: fixed;top: 250px;left: -5.5px;width: 33px;height: 108px;opacity: 0;z-index: 50;">
+    <ul style="overflow: hidden;">
+        <li><i class="icon1"></i></li>
+        <li><i class="icon2"></i></li>
+        <li><i class="icon3"></i></li>
+    </ul>
+</div>
+
+<div class="footer">
+    <div class="service">
+        <div class="service_flow">
+            <div class="service_item">
+                <i class="ecsc_zp"></i>
+                <span>正品保障</span>
+            </div>
+            <div class="service_item">
+                <i class="ecsc_bt"></i>
+                <span>七天包退</span>
+            </div>
+            <div class="service_item">
+                <i class="ecsc_hp"></i>
+                <span>好评如潮</span>
+            </div>
+            <div class="service_item">
+                <i class="ecsc_fh"></i>
+                <span>闪电发货</span>
+            </div>
+            <div class="service_item" id="service_item_last">
+                <i class="ecsc_ry"></i>
+                <span>权威荣誉</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer_desc">
+        <div class="footer_list">
+            <dl>
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="#">&gt;&nbsp;售后流程</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;购物流程</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;订购方式</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;隐私声明</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>配送与支付</dt>
+                <dd>
+                    <a href="#">&gt;&nbsp;货到付款区域</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;配送支付智能查询</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;支付方式说明</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;上门自提</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>会员中心</dt>
+                <dd>
+                    <a href="#">&gt;&nbsp;资金管理</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;我的收藏</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;我的订单</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>服务保证</dt>
+                <dd>
+                    <a href="#">&gt;&nbsp;退换货原则</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;售后服务保证</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;产品质量保证</a>
+                </dd>
+            </dl>
+            <dl class="contact_us">
+                <dt>联系我们</dt>
+                <dd>
+                    <a href="#">&gt;&nbsp;网站故障报告</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;选机资讯</a>
+                </dd>
+                <dd>
+                    <a href="#">&gt;&nbsp;投诉与建议</a>
+                </dd>
+            </dl>
+            <div class="code">
+                <ul class="code_tabs">
+                    <li class="ecjia">ECjia</li>
+                    <li>ECtouch</li>
+                </ul>
+                <div class="tabs_contant">
+                    <div class="code_01">
+                        <img src="{% static 'img/二维码.png' %}" alt="开发者二维码"/>
+                    </div>
+                    <div class="code_02" style="display: none;">
+                        <img src="{% static 'img/二维码2.png' %}" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p class="footer_ecscinfo" style="line-height: 25px;">
+                <a href="#">首页 </a>|
+                <a href="#">隐私保护</a>|
+                <a href="#">联系我们</a>|
+                <a href="#">免责条款</a>|
+                <a href="#">公司简介</a>|
+                <a href="#">商家入驻</a>|
+                <a href="#" style="border: 0px;">意见反馈</a>
+            </p>
+            <p>
+                <a href="#">模板堂</a>|
+                <a href="#">ECjia</a>|
+                <a href="#">ECtouch</a>|
+                <a href="#">电竞学院</a>|
+                <a href="#">ecshop模板堂</a>|
+                <a href="#">ECjia</a>|
+                <a href="#">ECtouch</a>|
+                <a href="#">大商创</a>
+            </p>
+            <p style="line-height: 18px;">
+                <a href="#">Powered by<span style="color: #ec5051;padding-left: 5px">大商创1.0</span></a>
+            </p>
+            <p style="padding-top: 10px;">
+                <a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_03.gif' %}" alt=""></a>
+                <a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_05.gif' %}" alt=""></a>
+                <a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_07.gif' %}" alt=""></a>
+                <a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_09.gif' %}" alt=""></a>
+                <a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_11.gif' %}" alt=""></a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="spec_items">
+    <img src="{% static 'img/nike/444_P_1450995273861.jpg' %}" alt=""/>
+</div>
+</body>
+
+</html>
