@@ -1,19 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title>耐克LeBron James</title>
-		<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
-		<script type="text/javascript" src="js/nike.js"></script>
-		<script type="text/javascript" src="js/jquery.fly.min.js"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/balance.js" ></script>
-		<script type="text/javascript" src="js/james.js" ></script>
-		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/index.css" />
-		<link rel="stylesheet" href="css/nike.css" />
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.0.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/nike.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.fly.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/balance.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/james.js' %}" ></script>
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/nike.css' %}" />
+
 		<style>
 			.header_nav li a.active1 {
 				border-bottom: none;
@@ -47,9 +49,9 @@
 									<i class="user"></i>
 								</a>
 								<div class="user_info">
-									<i style="background: url(img/ibar_sprites.png)no-repeat;width: 5px;height: 9px;position: absolute;
+									<i style="background: url({% static 'img/ibar_sprites.png' %})no-repeat;width: 5px;height: 9px;position: absolute;
 										right: -5px;top: 15px;background-position:0px -254px;"></i>
-									<p style="margin: 10px;width: 100px;height: 100px;float: left;"><img src="img/QQ图片20160917002104.jpg" alt="" style="width: 100px;height: 100px;border-radius:20% "></p>
+									<p style="margin: 10px;width: 100px;height: 100px;float: left;"><img src="{% static 'img/QQ图片20160917002104.jpg' %}" alt="" style="width: 100px;height: 100px;border-radius:20% "></p>
 									<ul class="info">
 										<li>用户名：猪</li>
 										<li>级别：铜牌</li>
@@ -127,13 +129,13 @@
 					</div>
 				</div>
 				<div class="cart_list" style="background: #fff;">
-					<a style="background: url(img/ibar_sprites.png);background-position: 0px -272px;display: block;width: 20px;height: 20px;
+					<a style="background: url({% static 'img/ibar_sprites.png' %});background-position: 0px -272px;display: block;width: 20px;height: 20px;
 						position: absolute;top: 9px;right: 12px;cursor: pointer;" class="close"></a>
 					<h3 style="">购物车</h3>
 					<div class="panel_contant">
 						<div style="position: absolute;top: 30%;" class="noGoods">
 							<div class="no">
-								<img src="img/toolbar-face.png" alt="小狐狸">
+								<img src="{% static 'img/toolbar-face.png' %}" alt="小狐狸">
 							</div>
 							<div class="tips_text">
 								<p>购物车空空的，赶快去挑选心仪的商品吧~</p>
@@ -167,7 +169,7 @@
 		</div>
 		<div class="title">
 			<span class="title_first">送货至：</span>
-			<span class="destination">深圳<img class="arrow" src="img/向下箭头.png" alt=""/></span>
+			<span class="destination">深圳<img class="arrow" src="{% static 'img/向下箭头.png' %}" alt=""/></span>
 			<div class="login">
 				<a href="http://127.0.0.1:8020/shanmao/login.html">请登录</a>
 				<a href="http://127.0.0.1:8020/shanmao/regist.html">注册</a>
@@ -207,18 +209,18 @@
 				</ul>
 			</div>
 			<div class="car">
-				<a href="http://www.shanmao.net.cn/flow.php"><img src="img/car.png" alt="购物车" /></a>
+				<a href="http://www.shanmao.net.cn/flow.php"><img src="{% static 'img/car.png' %}" alt="购物车" /></a>
 			</div>
 		</div>
 
 		<div class="header">
 			<div class="logo">
 				<a href="http://127.0.0.1:8020/shanmao/index.html">
-					<img src="img/闪猫商城-您的一站式购物平台_09.png" alt="闪猫商城" />
+					<img src="{% static 'img/闪猫商城-您的一站式购物平台_09.png' %}" alt="闪猫商城" />
 				</a>
 			</div>
 			<div class="join">
-				<a href="http://www.shanmao.net.cn/merchants.php" target="_blank"><img src="img/ecsc-join.gif" / alt="连锁加盟"></a>
+				<a href="http://www.shanmao.net.cn/merchants.php" target="_blank"><img src="{% static 'img/ecsc-join.gif' %}"  alt="连锁加盟"></a>
 			</div>
 			<div class="search" style="margin-top: 10px;">
 				<span style="text-align: center;line-height: 37px;width: 62px;height: 37px;font-size: 18px;display: block;" class="search_span">商品</span>
@@ -240,7 +242,7 @@
 					</ul>
 				</div>
 				<div style="width: 59px;height: 36px;background: #ec5151;float: right;margin-top: -47px;cursor: pointer;">
-					<a href="#"><img src="img/闪猫商城-您的一站式购物平台_12.png" style="padding-left: 10px;padding-top: 2px;" /></a>
+					<a href="#"><img src="{% static 'img/闪猫商城-您的一站式购物平台_12.png' %}" style="padding-left: 10px;padding-top: 2px;" /></a>
 				</div>
 			</div>
 			<div style="width: 216px;height: 55px;float: right;background: url(img/闪猫商城-您的一站式购物平台_06.png);">
@@ -291,7 +293,11 @@
 		<div class="ecsc_head w1200" style="padding: 20px 0px;line-height: 24px;">
 			<h1>休闲、运动、户外健身</h1>
 			<span style="font-family: '宋体';color: #A7A7A7;margin:0px 6px;line-height: 24px;">></span>
-			<span>耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码</span>
+			{% for good in goodlist %}
+			    <span>{{ good.information }}</span>
+			{% endfor %}
+
+
 		</div>
 
 		<div class="p_box">
@@ -301,7 +307,7 @@
 						<div class="picture">
 							<span style="display: none;" class="goodId">1</span>
 							<a style="position: relative;display: inline-block;outline: 0px;">
-								<img src="img/nike/444_P_1450995273861.jpg" alt="耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码" width="405px" height="405px" class="goodImg" id="1" />
+								<img src="{% static 'img/nike/444_P_1450995273861.jpg' %}" alt="耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码" width="405px" height="405px" class="goodImg" id="1" />
 								<div class="magic_small"></div>
 								<div class="magic_box" style="z-index: 10;"id="big_img">
 									
@@ -315,7 +321,7 @@
 								<ul>
 									<li>
 										<a href="#" style="display: inline-block;border: 1px solid #EC5051;">
-											<img src="img/nike/444_P_1450995273861.jpg" alt="耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码" width="60px" height="60px" />
+											<img src="{% static 'img/nike/444_P_1450995273861.jpg' %}" alt="耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码" width="60px" height="60px" />
 										</a>
 									</li>
 								</ul>
@@ -366,7 +372,7 @@
 						</div>
 					</div>
 					<div style="float: right; border: 1px solid #efefef;">
-						<img src="img/nike/QQ截图20160921113153.png" alt="" style="display: inline;" />
+						<img src="{% static 'img/nike/QQ截图20160921113153.png' %}" alt="" style="display: inline;" />
 					</div>
 				</div>
 			</div>
@@ -472,10 +478,10 @@
 						</ul>
 						<div class="tabs_contant">
 							<div class="code_01">
-								<img src="img/二维码.png" alt="开发者二维码" />
+								<img src="{% static 'img/二维码.png' %}" alt="开发者二维码" />
 							</div>
 							<div class="code_02" style="display: none;">
-								<img src="img/二维码2.png" alt="" />
+								<img src="{% static 'img/二维码2.png' %}" alt="" />
 							</div>
 						</div>
 					</div>
@@ -504,13 +510,13 @@
 						<a href="#">Powered by<span style="color: #ec5051;padding-left: 5px">大商创1.0</span></a>
 					</p>
 					<p style="padding-top: 10px;">
-						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_03.gif" alt=""></a>
-						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_05.gif" alt=""></a>
-						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_07.gif" alt=""></a>
-						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_09.gif" alt=""></a>
-						<a href="#"><img src="img/images/闪猫商城-您的一站式购物平台_11.gif" alt=""></a>
+						<a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_03.gif' %}" alt=""></a>
+						<a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_05.gif' %}" alt=""></a>
+						<a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_07.gif' %}" alt=""></a>
+						<a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_09.gif' %}" alt=""></a>
+						<a href="#"><img src="{% static 'img/images/闪猫商城-您的一站式购物平台_11.gif' %}" alt=""></a>
 					</p>
-				</div>
+				</div>7
 			</div>
 		</div>
 	</body>

@@ -1,23 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/balance.css" />
-		<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
-		<script type="text/javascript" src="js/balance.js"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/balance.css' %}" />
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.0.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/balance.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>
 	</head>
 
 	<body>
 		<div class="title">
 			<span class="title_first">送货至：</span>
-			<span class="destination">深圳<img class="arrow" src="img/向下箭头.png" alt=""/></span>
+			<span class="destination">深圳<img class="arrow" src="{% static 'img/向下箭头.png' %}" alt=""/></span>
 			<div class="login">
-				<a href="http://127.0.0.1:8020/shanmao/login.html">请登录</a>
-				<a href="http://127.0.0.1:8020/shanmao/regist.html">注册</a>
+				<a href="{% url 'sm:login' %}">请登录</a>
+				<a href="{% url 'sm:register' %}">注册</a>
 			</div>
 			<div class="title_nav" style="right: 50px;">
 				<ul>
@@ -57,7 +58,7 @@
 
 		<div class="bal_header w1200">
 			<div class="bal_logo">
-				<a href="http://127.0.0.1:8020/shanmao/index.html"><img src="img/闪猫商城-您的一站式购物平台_09.png" alt="闪猫商城" /></a>
+				<a href="http://127.0.0.1:8020/shanmao/index.html"><img src="{% static 'img/闪猫商城-您的一站式购物平台_09.png' %}" alt="闪猫商城" /></a>
 			</div>
 			<div class="bal_search">
 				<form class="searchForm" name="serchForm" method="get">

@@ -667,7 +667,7 @@ $(function(){
 		var li = $(".elevator ul li")
 		var guess = $(".guess").offset().top;
 		var isMoving = false;
-		
+
 		li.click(function(){
 			var index = $(this).index();
 			var _top = floot.eq(index).offset().top;
