@@ -13,7 +13,7 @@ $(function(){
 					var _name = users[i].name
 					console.log((_name))
 				setTimeout(function(){
-					window.location.href = "http://127.0.0.1:8020/shanmao/index.html?username="+_name;
+					window.location.href = "http://127.0.0.1:8002/?username="+_name;
 				},3000)
 
 					isTrue = true;

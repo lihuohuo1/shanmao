@@ -190,8 +190,8 @@
     <span class="title_first">送货至：</span>
     <span class="destination">深圳<img class="arrow" src="{% static 'img/向下箭头.png' %}" alt=""/></span>
     <div class="login">
-        {% if username %}
-            {{ username }}
+        {% if user %}
+            {{ user.username }}
             <a href="{% url 'sm:logout' %}">退出</a>
         {% else %}
             <a href="{% url 'sm:login' %}">请登录</a>
@@ -671,188 +671,189 @@
             <div class="done-item" style="display: block;">
                 <ul style="width: 1850px;left: 0px;position: relative;overflow: hidden;" class="done_item_ul">
 
+                    {% for good in goodlist %}
 
-
-                    <li style="border-left: 1px solid #dcdcdc;">
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_10.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">耐克NikeLebron Xi Premium詹姆斯11代鸳</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											4310.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											5172.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/lbj2.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											75.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											117.60
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="i{% static 'img/lbj3.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											246.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											358.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_02.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											248.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											358.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_04.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											233.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											450.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_05.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											666.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											888.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_06.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											123.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											321.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_07.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="{% url 'sm:nike' %}">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											123.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											321.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_08.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											111.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											222.00
-                    										</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="tempWrap_img">
-                            <img src="{% static 'img/hot_09.jpg' %}" alt=""/>
-                        </div>
-                        <div class="done_name">
-                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>
-                        </div>
-                        <div class="done_price">
-                    									<span class="shop_price">
-                    											<em>￥</em>
-                    											231.00
-                    										</span>
-                            <span class="original-price">
-                    											<em>￥</em>
-                    											333.00
-                    										</span>
-                        </div>
-                    </li>
+                        <li style="border-left: 1px solid #dcdcdc;">
+                            <div class="tempWrap_img">
+                                <img src="static/{{ good.img }}" alt=""/>
+                            </div>
+                            <div class="done_name">
+                                <a href="{% url 'sm:nike' %}">{{ good.information }}</a>
+                            </div>
+                            <div class="done_price">
+                                                            <span class="shop_price">
+                                                                    <em>￥</em>
+                                                                    {{ good.price }}
+                                                                </span>
+                                <span class="original-price">
+                                                                    <em>￥</em>
+                                                                    {{ good.original }}
+                                                                </span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/lbj2.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											75.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											117.60#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="i{% static 'img/lbj3.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											246.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											358.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_02.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											248.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											358.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_04.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											233.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											450.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_05.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											666.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											888.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_06.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											123.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											321.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_07.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="{% url 'sm:nike' %}">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											123.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											321.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_08.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="#">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											111.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											222.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
+                    {#                    <li>#}
+                    {#                        <div class="tempWrap_img">#}
+                    {#                            <img src="{% static 'img/hot_09.jpg' %}" alt=""/>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_name">#}
+                    {#                            <a href="#">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>#}
+                    {#                        </div>#}
+                    {#                        <div class="done_price">#}
+                    {#                    									<span class="shop_price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											231.00#}
+                    {#                    										</span>#}
+                    {#                            <span class="original-price">#}
+                    {#                    											<em>￥</em>#}
+                    {#                    											333.00#}
+                    {#                    										</span>#}
+                    {#                        </div>#}
+                    {#                    </li>#}
                 </ul>
             </div>
 

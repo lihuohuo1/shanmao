@@ -171,8 +171,8 @@
 			<span class="title_first">送货至：</span>
 			<span class="destination">深圳<img class="arrow" src="{% static 'img/向下箭头.png' %}" alt=""/></span>
 			<div class="login">
-				<a href="http://127.0.0.1:8020/shanmao/login.html">请登录</a>
-				<a href="http://127.0.0.1:8020/shanmao/regist.html">注册</a>
+				<a href="{% url 'sm:login' %}">请登录</a>
+				<a href="{% url 'sm:register' %}">注册</a>
 			</div>
 			<div class="title_nav">
 				<ul>
@@ -189,7 +189,8 @@
 						<a href="http://www.shanmao.net.cn/user.php?act=message_list">客户服务</a>
 					</li>
 					<li class="li_last">
-						<a class="a_last" href="http://www.shanmao.net.cn/package.php">促销活动&or;</li>
+						<a class="a_last" href="http://www.shanmao.net.cn/package.php">促销活动</a>
+                    </li>
 				</ul>
 			</div>
 			<div id="li_last_nav">
@@ -209,7 +210,7 @@
 				</ul>
 			</div>
 			<div class="car">
-				<a href="http://www.shanmao.net.cn/flow.php"><img src="{% static 'img/car.png' %}" alt="购物车" /></a>
+				<a href="{% url 'sm:balance' %}"><img src="{% static 'img/car.png' %}" alt="购物车" /></a>
 			</div>
 		</div>
 
@@ -245,7 +246,7 @@
 					<a href="#"><img src="{% static 'img/闪猫商城-您的一站式购物平台_12.png' %}" style="padding-left: 10px;padding-top: 2px;" /></a>
 				</div>
 			</div>
-			<div style="width: 216px;height: 55px;float: right;background: url(img/闪猫商城-您的一站式购物平台_06.png);">
+			<div style="width: 216px;height: 55px;float: right;background: url({% static 'img/闪猫商城-您的一站式购物平台_06.png' %});">
 				<a href="#" style="display: block;width: 216px;height: 44px;"></a>
 			</div>
 			<div style="padding-top: 80px;"><span style="display: block;width: 210px;height:23px;background: black;color: white;font-size: 16px;
@@ -254,7 +255,7 @@
 			<div class="header_nav">
 				<ul>
 					<li>
-						<a href="http://127.0.0.1:8020/shanmao/index.html" class="active1" style="color: #EC5051;">首页</a>
+						<a href="{% url 'sm:index' %}" class="active1" style="color: #EC5051;">首页</a>
 					</li>
 					<li>
 						<a href="#">食品特产</a>
@@ -293,9 +294,7 @@
 		<div class="ecsc_head w1200" style="padding: 20px 0px;line-height: 24px;">
 			<h1>休闲、运动、户外健身</h1>
 			<span style="font-family: '宋体';color: #A7A7A7;margin:0px 6px;line-height: 24px;">></span>
-			{% for good in goodlist %}
-			    <span>{{ good.information }}</span>
-			{% endfor %}
+
 
 
 		</div>

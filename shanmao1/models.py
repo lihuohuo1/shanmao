@@ -9,9 +9,11 @@ class Goods(models.Model):
     RMB = models.CharField(max_length=10)
     price = models.DecimalField(max_digits=6,decimal_places=2)
     original =models.DecimalField(max_digits=6,decimal_places=2)
+    goodsid = models.CharField(max_length=8,default='')
 
 
 class User(models.Model):
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
+    token = models.CharField(max_length=256,default='')

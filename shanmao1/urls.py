@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^nike/$',views.nike,name='nike'),
     url(r'^logout/$',views.logout,name='logout'),
     url(r'^balance/$',views.balance,name='balance'),
+
 ]
