@@ -17,17 +17,18 @@ $(function(){
 			var li = $("<li></li>");
 			var inp = $("<input type = 'checkbox' class='ui_checkbox' checked='checked'/>")
 			var img = $("<img class='img'/>")
-			img.attr("src","img/hot_10.jpg") 
+			img.attr("src","/static/img/鞋包钟奢2.jpg")
 			var name = $("<a>"+ goods[i].name +"</a>")
-			var price = $("<span class='unit_price'><em>￥</em>"+ goods[i].price +"</span>")
 			var num = $("<div class='check_goods_num'>"+ goods[i].num +"</div>");
+			var price = $("<span class='unit_price'><em>￥</em>"+ goods[i].price +"</span>")
+
 			var cell = $("<div class='cell'><span class='total_price'><em>￥</em>"+ parseFloat(((goods[i].num)*(goods[i].price))) +"</span></div>")
 			var del = $("<i class='active'>删除</i>")
 			del.css({"float":"left","padding-left":"25px","padding-top":"30px","cursor":"pointer"})
 			li.append(inp,img,name,price,num,cell,del);
 			$(".item_list_ul").append(li);
 			$(".cart_check_sum").html(goods[i].num);
-			$(".cart_goods_amount").html(goods[i].price);
+			$(".cart_goods_amount").html('￥'+goods[i].price*goods[i].num);
 		}
 		del.click(function(){
 			$.cookie("cart","",{expires:-1,path:"/"})

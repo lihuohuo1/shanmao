@@ -53,6 +53,15 @@ $(function(e) {
 	}
 	magic()
 
+	// $.('/shanmao/balance/',{'goodsid':''},function (response) {
+	// 	console.log(response)
+	// 	if ( response.status == -1){
+	//
+	// 		window.open('/shanmao/login/',target='_self')
+	// 	}
+	// })
+
+
 	//商品图片飞向购物车
 	function fly() {
 		$(".append").click(function(e) {
@@ -77,9 +86,9 @@ $(function(e) {
 				        {
 				          	window.location.href = "#";
 				        }
-				        else 
+				        else
 				        {
-				         	window.location.href = "http://127.0.0.1:8020/shanmao/balance.html";
+				         	window.location.href = "#";
 				        }
 				}
 			})
@@ -99,6 +108,9 @@ $(function(e) {
 			$(".noGoods").hide();
 			$(".goods_list").show();
 			var goods = $.cookie("cart") ? JSON.parse($.cookie("cart")) : []
+			var goodsid = $(this).attr('goodsid')
+
+
 
 			var isTrue = false;
 			for(var i = 0; i < goods.length; i++) {
@@ -150,7 +162,7 @@ $(function(e) {
 					var y = $(".goodPrice").find("i").html();
 					$(".cart_span").html(x);
 					$(".title_left").find("i").html(x);
-					$(".title_right").find("i").html(parseFloat(x * y))					
+					$(".title_right").find("i").html(parseFloat(x * y))
 					var price = $("<span>" + goods[i].price + "</span>")
 					copyImg.appendTo(li)
 					li.append(name, price, num, del);
@@ -164,7 +176,7 @@ $(function(e) {
 					$(".list li").mouseleave(function() {
 						$(this).find("p").hide();
 					})
-				}				
+				}
 			}
 			$(".list li p").on("click", function() {
 				$.cookie("cart", "", {

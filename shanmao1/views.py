@@ -1,13 +1,12 @@
 import hashlib
 import random
 import time
-import uuid
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from shanmao1.models import Goods, User
+from shanmao1.models import Goods, User, Balance
 
 
 def index(request):
@@ -34,12 +33,12 @@ def index(request):
 
 
 def generate_token():
-
     token = str(time.time()) + str(random.random())
     md5 = hashlib.md5()
     md5.update(token.encode('utf-8'))
 
     return md5.hexdigest()
+
 
 def generate_password(password):
     md5 = hashlib.md5()
@@ -64,25 +63,10 @@ def register(request):
 
         response = redirect('sm:index')
 
-        
-
         request.session['token'] = user.token
-
-
-
-
 
         # response.set_cookie('username',username)
         return response
-
-
-def nike(request):
-    goodlist = Goods.objects.all()
-
-    data = {
-        'goodlist': goodlist
-    }
-    return render(request, 'nike.html', context=data)
 
 
 def logout(request):
@@ -114,5 +98,63 @@ def login(request):
             return render(request, 'login.html', context={'err': '用户名或密码错误'})
 
 
+def nike(request,id):
+    token = request.session.get('token')
+    users = User.objects.filter(token=token)
+    user = users.first()
+    if token:
+        goods = Goods.objects.get(goodsid=int(id))
+        goods.save()
+
+        data = {
+            'goods':goods,
+            'id':id,
+            'user': user,
+
+        }
+        return render(request, 'nike.html',context=data)
+    else:
+        return render(request,'login.html')
+
+
+
+
+def addcart(request):
+    token = request.session['token']
+    goodsid = request.GET.get('goodsid')
+    data = {}
+    if token:
+        user = User.objects.get(token=token)
+        goods = Goods.objects.get(pk=goodsid)
+        balances = Balance.objects.filter(user=user).filter(goods=goods)
+        if balances.exists():
+            pass
+        else:
+            balance = Balance()
+            balance.user = user
+            balance.goods = goods
+            balance.number = 1
+            balance.save()
+
+        return  JsonResponse({'msg':'{},添加购物车成功'.format(goods.information), 'number': balance.number})
+    else:
+        data['msg'] = '请登录后操作!'
+        data['status'] = -1
+        return redirect('sm:login')
+
+
 def balance(request):
-    return None
+
+    token = request.session.get('token')
+    users = User.objects.filter(token=token)
+    user = users.first()
+    if token:
+
+
+        data = {
+            'user': user,
+
+        }
+        return render(request, 'balance.html',context=data)
+    else:
+        return render(request,'login.html')

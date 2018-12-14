@@ -146,9 +146,9 @@
                 <div class="goods_list" style="display: none;">
                     <ul class="list">
                         <!--<li>
-                            <img src="img/nike/444_P_1450995273861.jpg"/>
-                            <a>耐克NikeLebron Xi Premium詹姆斯11代鸳鸯篮球鞋男士 US8/41码</a>
-                            <span>¥4310.00</span>&nbsp;×
+                            <img src="{% static goods.img %}"/>
+                            <a>{{ goods.information }}</a>
+                            <span>{{ goods.price }}</span>&nbsp;×
                             <i>1</i>
                             <p>删除</p>
                         </li>-->
@@ -240,7 +240,7 @@
         </ul>
     </div>
     <div class="car">
-        <a href="http://www.shanmao.net.cn/flow.php"><img src="{% static 'img/car.png' %}" alt="购物车"/></a>
+        <a href="{% url 'sm:balance' %}"><img src="{% static 'img/car.png' %}" alt="购物车"/></a>
     </div>
 </div>
 
@@ -678,7 +678,7 @@
                                 <img src="static/{{ good.img }}" alt=""/>
                             </div>
                             <div class="done_name">
-                                <a href="{% url 'sm:nike' %}">{{ good.information }}</a>
+                                <a href="/nike/{{ good.goodsid }}">{{ good.information }}</a>
                             </div>
                             <div class="done_price">
                                                             <span class="shop_price">
@@ -692,96 +692,96 @@
                             </div>
                         </li>
                     {% endfor %}
-                    {#                    <li>#}
-                    {#                        <div class="tempWrap_img">#}
-                    {#                            <img src="{% static 'img/lbj2.jpg' %}" alt=""/>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_name">#}
-                    {#                            <a href="{% url 'sm:nike' %}">轻雅多维营养代餐粉 果蔬纤维 膳食纤维 魔芋粉产</a>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_price">#}
-                    {#                    									<span class="shop_price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											75.00#}
-                    {#                    										</span>#}
-                    {#                            <span class="original-price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											117.60#}
-                    {#                    										</span>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li>#}
-                    {#                        <div class="tempWrap_img">#}
-                    {#                            <img src="i{% static 'img/lbj3.jpg' %}" alt=""/>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_name">#}
-                    {#                            <a href="{% url 'sm:nike' %}">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_price">#}
-                    {#                    									<span class="shop_price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											246.00#}
-                    {#                    										</span>#}
-                    {#                            <span class="original-price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											358.00#}
-                    {#                    										</span>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li>#}
-                    {#                        <div class="tempWrap_img">#}
-                    {#                            <img src="{% static 'img/hot_02.jpg' %}" alt=""/>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_name">#}
-                    {#                            <a href="{% url 'sm:nike' %}">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_price">#}
-                    {#                    									<span class="shop_price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											248.00#}
-                    {#                    										</span>#}
-                    {#                            <span class="original-price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											358.00#}
-                    {#                    										</span>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li>#}
-                    {#                        <div class="tempWrap_img">#}
-                    {#                            <img src="{% static 'img/hot_04.jpg' %}" alt=""/>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_name">#}
-                    {#                            <a href="{% url 'sm:nike' %}">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_price">#}
-                    {#                    									<span class="shop_price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											233.00#}
-                    {#                    										</span>#}
-                    {#                            <span class="original-price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											450.00#}
-                    {#                    										</span>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    {#                    <li>#}
-                    {#                        <div class="tempWrap_img">#}
-                    {#                            <img src="{% static 'img/hot_05.jpg' %}" alt=""/>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_name">#}
-                    {#                            <a href="{% url 'sm:nike' %}">古城猎人 拉杆箱20/24寸万向轮旅行箱 黑色 24寸</a>#}
-                    {#                        </div>#}
-                    {#                        <div class="done_price">#}
-                    {#                    									<span class="shop_price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											666.00#}
-                    {#                    										</span>#}
-                    {#                            <span class="original-price">#}
-                    {#                    											<em>￥</em>#}
-                    {#                    											888.00#}
-                    {#                    										</span>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
+                    {#                                        <li>#}
+                    {#                                            <div class="tempWrap_img">#}
+                    {#                                                <img src="{% static 'img/鞋包钟奢5.jpg' %}" alt=""/>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_name">#}
+                    {#                                                <a href="{% url 'sm:nike2' %}">Aax Fory 靴子 牛皮商务正装男士皮靴工装靴 0802-</a>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_price">#}
+                    {#                                        									<span class="shop_price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											83.60#}
+                    {#                                        										</span>#}
+                    {#                                                <span class="original-price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											118.80#}
+                    {#                                        										</span>#}
+                    {#                                            </div>#}
+                    {#                                        </li>#}
+                    {#                                        <li>#}
+                    {#                                            <div class="tempWrap_img">#}
+                    {#                                                <img src="{% static 'img/鞋包钟奢2.jpg' %}" alt=""/>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_name">#}
+                    {#                                                <a href="{% url 'sm:nike3' %}">MINNETONKA 迷你唐卡 女士凯蒂摩卡反绒真皮黄</a>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_price">#}
+                    {#                                        									<span class="shop_price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											246.00#}
+                    {#                                        										</span>#}
+                    {#                                                <span class="original-price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											358.00#}
+                    {#                                        										</span>#}
+                    {#                                            </div>#}
+                    {#                                        </li>#}
+                    {#                                        <li>#}
+                    {#                                            <div class="tempWrap_img">#}
+                    {#                                                <img src="{% static 'img/鞋包钟奢1.jpg' %}" alt=""/>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_name">#}
+                    {#                                                <a href="{% url 'sm:nike4' %}">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_price">#}
+                    {#                                        									<span class="shop_price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											248.00#}
+                    {#                                        										</span>#}
+                    {#                                                <span class="original-price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											358.00#}
+                    {#                                        										</span>#}
+                    {#                                            </div>#}
+                    {#                                        </li>#}
+                    {#                                        <li>#}
+                    {#                                            <div class="tempWrap_img">#}
+                    {#                                                <img src="{% static 'img/鞋包钟奢3.jpg' %}" alt=""/>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_name">#}
+                    {#                                                <a href="{% url 'sm:nike' %}">MINNETONKA 迷你唐卡 女士蝴蝶结系带豹纹黑色</a>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_price">#}
+                    {#                                        									<span class="shop_price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											279.00#}
+                    {#                                        										</span>#}
+                    {#                                                <span class="original-price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											334.00#}
+                    {#                                        										</span>#}
+                    {#                                            </div>#}
+                    {#                                        </li>#}
+                    {#                                        <li>#}
+                    {#                                            <div class="tempWrap_img">#}
+                    {#                                                <img src="{% static 'img/鞋包钟奢4.jpg' %}" alt=""/>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_name">#}
+                    {#                                                <a href="{% url 'sm:nike5' %}">美国红翼Red Wing 高帮皮靴 皮鞋 工装靴 08138-1</a>#}
+                    {#                                            </div>#}
+                    {#                                            <div class="done_price">#}
+                    {#                                        									<span class="shop_price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											666.00#}
+                    {#                                        										</span>#}
+                    {#                                                <span class="original-price">#}
+                    {#                                        											<em>￥</em>#}
+                    {#                                        											888.00#}
+                    {#                                        										</span>#}
+                    {#                                            </div>#}
+                    {#                                        </li>#}
                     {#                    <li>#}
                     {#                        <div class="tempWrap_img">#}
                     {#                            <img src="{% static 'img/hot_06.jpg' %}" alt=""/>#}
@@ -2729,7 +2729,9 @@
     </div>
 </div>
 <div class="spec_items">
-    <img src="{% static 'img/nike/444_P_1450995273861.jpg' %}" alt=""/>
+    <img src="" alt="">
+
+
 </div>
 </body>
 
